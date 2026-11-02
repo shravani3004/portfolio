@@ -27,7 +27,7 @@ document.querySelectorAll('#navMenu .nav-link').forEach(link => {
 });
 
 // 3. Typing effect: types a role, pauses, deletes it, then moves to the next
-const roles = ['MCA Student', 'Full-Stack Developer', 'Problem Solver'];  // edit these
+const roles = ['MCA Student', 'Web Developer', 'Problem Solver', 'Software Developer'];  // edit these
 const typedEl = document.getElementById('typed-role');
 let roleIndex = 0, charIndex = 0, deleting = false;
 
