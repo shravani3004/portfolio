@@ -1,0 +1,173 @@
+/* =========================================================
+   Portfolio styles
+   1. Variables  2. Base  3. Navbar  4. Hero  5. Sections
+   6. Cards  7. Timeline  8. Contact  9. Footer  10. Responsive
+   ========================================================= */
+
+/* ---------- 1. Colour palette & design tokens ---------- */
+:root {
+  --blue:        #2563eb;   /* main accent */
+  --blue-light:  #60a5fa;   /* highlights */
+  --dark:        #1f2937;   /* dark gray: text + dark backgrounds */
+  --dark-deep:   #111827;   /* hero background */
+  --gray:        #6b7280;   /* secondary text */
+  --white:       #ffffff;
+  --bg-alt:      #f3f6fb;   /* light tint for alternate sections */
+  --radius:      16px;
+  --shadow:      0 10px 30px rgba(17, 24, 39, .08);
+}
+
+/* ---------- 2. Base ---------- */
+html { scroll-behavior: smooth; }            /* smooth scrolling */
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  color: var(--dark);
+  line-height: 1.7;
+}
+h1, h2, h3 { font-weight: 800; line-height: 1.2; }
+a { color: var(--blue); }
+:focus-visible { outline: 3px solid var(--blue-light); outline-offset: 3px; }  /* keyboard focus */
+
+.section      { padding: 90px 0; }
+.section-alt  { background: var(--bg-alt); }
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 2.5rem;
+  position: relative;
+  padding-bottom: .8rem;
+}
+.section-title::after {                       /* small blue underline */
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 56px; height: 4px; border-radius: 4px; background: var(--blue);
+}
+
+/* Glassmorphism: translucent background + blur + soft border */
+.glass {
+  background: rgba(255, 255, 255, .65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, .6);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Buttons */
+.btn-primary-custom, .btn-outline-custom {
+  padding: .75rem 1.6rem; border-radius: 50px; font-weight: 700;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn-primary-custom { background: var(--blue); color: var(--white); border: 2px solid var(--blue); }
+.btn-primary-custom:hover { background: #1d4ed8; color: var(--white); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(37,99,235,.35); }
+.btn-outline-custom { color: var(--white); border: 2px solid rgba(255,255,255,.6); }
+.btn-outline-custom:hover { background: var(--white); color: var(--dark); transform: translateY(-3px); }
+
+/* ---------- 3. Navbar ---------- */
+.navbar { padding: .9rem 0; transition: background .3s ease, box-shadow .3s ease; }
+.navbar.scrolled { background: rgba(17,24,39,.92); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,.2); }
+.navbar-brand { color: var(--white); font-weight: 800; font-size: 1.4rem; }
+.navbar-brand span { color: var(--blue-light); }
+.navbar-brand:hover { color: var(--white); }
+.navbar .nav-link { color: rgba(255,255,255,.8); font-weight: 500; }
+.navbar .nav-link:hover, .navbar .nav-link.active { color: var(--blue-light); }
+@media (max-width: 991px) {                   /* mobile menu gets a dark panel */
+  .navbar-collapse { background: var(--dark-deep); border-radius: var(--radius); padding: 1rem; margin-top: .6rem; }
+}
+
+/* ---------- 4. Hero ---------- */
+.hero {
+  min-height: 100vh; padding: 110px 0 70px; color: var(--white);
+  background:
+    radial-gradient(circle at 80% 20%, rgba(37,99,235,.35), transparent 45%),
+    linear-gradient(135deg, var(--dark-deep), var(--dark));
+}
+.hero-hello { color: var(--blue-light); font-weight: 700; margin-bottom: .3rem; }
+.hero-name  { font-size: clamp(2.6rem, 7vw, 4.4rem); }
+.hero-role  { font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 500; color: rgba(255,255,255,.85); margin: .6rem 0 1rem; }
+#typed-role { color: var(--blue-light); font-weight: 800; }
+.cursor     { color: var(--blue-light); animation: blink 1s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.hero-text  { max-width: 540px; color: rgba(255,255,255,.75); }
+
+.social a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px; margin-right: .5rem; border-radius: 50%;
+  color: var(--white); border: 1px solid rgba(255,255,255,.35); text-decoration: none;
+  transition: background .2s ease, transform .2s ease;
+}
+.social a:hover { background: var(--blue); border-color: var(--blue); transform: translateY(-3px); }
+
+/* "Code window" card in the hero (dark glass) */
+.code-window { padding: 1.4rem; background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.15); }
+.code-window .dots span { display: inline-block; width: 11px; height: 11px; border-radius: 50%; background: #475569; margin-right: 6px; }
+.code-window pre { margin: 1rem 0 0; color: #e5e7eb; font-size: .95rem; line-height: 1.8; white-space: pre-wrap; }
+.c-k { color: var(--blue-light); }   /* keywords */
+.c-s { color: #93c5fd; }             /* strings */
+
+/* ---------- 5. About ---------- */
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; padding: 1.8rem; height: 100%; }
+.stat-grid strong { display: block; font-size: 2rem; color: var(--blue); line-height: 1.1; }
+.stat-grid span   { color: var(--gray); font-size: .9rem; }
+
+/* ---------- 6. Cards (skills, projects, certifications) ---------- */
+.skill-card, .project-card { padding: 1.8rem; height: 100%; transition: transform .25s ease, box-shadow .25s ease; }
+.skill-card:hover, .project-card:hover, .cert-card:hover { transform: translateY(-6px); box-shadow: 0 16px 35px rgba(37,99,235,.18); }
+.skill-card > i { font-size: 1.6rem; color: var(--blue); margin-bottom: .8rem; }
+.skill-card h3, .project-card h3 { font-size: 1.15rem; }
+
+.tags { list-style: none; padding: 0; margin: .8rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.tags li { background: rgba(37,99,235,.1); color: var(--blue); padding: .2rem .8rem; border-radius: 50px; font-size: .85rem; font-weight: 600; }
+
+.project-icon {
+  width: 54px; height: 54px; display: grid; place-items: center; margin-bottom: 1rem;
+  border-radius: 14px; background: var(--blue); color: var(--white); font-size: 1.4rem;
+}
+.project-card p { color: var(--gray); }
+.project-links { margin-top: 1.2rem; }
+.project-links a { font-weight: 700; text-decoration: none; }
+.project-links a:hover { text-decoration: underline; }
+
+.cert-card { display: flex; gap: 1rem; align-items: center; padding: 1.4rem; transition: transform .25s ease, box-shadow .25s ease; }
+.cert-card > i { font-size: 1.8rem; color: var(--blue); }
+.cert-card h3 { font-size: 1.05rem; margin: 0; }
+.cert-card p  { margin: 0; color: var(--gray); font-size: .9rem; }
+
+/* ---------- 7. Education timeline (education IS a sequence) ---------- */
+.timeline { position: relative; padding-left: 2rem; border-left: 3px solid rgba(37,99,235,.25); }
+.timeline-item { position: relative; margin-bottom: 2rem; }
+.timeline-item::before {                      /* dot on the line */
+  content: ""; position: absolute; left: calc(-2rem - 9px); top: .45rem;
+  width: 15px; height: 15px; border-radius: 50%; background: var(--blue); border: 3px solid var(--bg-alt);
+}
+.timeline-item h3 { font-size: 1.15rem; margin-bottom: .1rem; }
+.timeline-item .meta { color: var(--blue); font-weight: 600; margin-bottom: .3rem; }
+
+/* Resume box */
+.resume-box { padding: 3rem 1.5rem; max-width: 760px; margin: 0 auto; }
+
+/* ---------- 8. Contact ---------- */
+.contact-list { list-style: none; padding: 0; }
+.contact-list li { margin-bottom: .8rem; }
+.contact-list i { width: 28px; color: var(--blue); }
+.contact-form { padding: 2rem; }
+.form-control { border-radius: 10px; padding: .7rem 1rem; }
+.form-control:focus { border-color: var(--blue); box-shadow: 0 0 0 .2rem rgba(37,99,235,.2); }
+#formStatus { font-weight: 600; color: #15803d; }
+
+/* ---------- 9. Footer + back-to-top ---------- */
+.footer { background: var(--dark-deep); color: rgba(255,255,255,.7); padding: 2.2rem 0; }
+#toTop {
+  position: fixed; right: 20px; bottom: 20px; width: 44px; height: 44px; border: 0; border-radius: 50%;
+  background: var(--blue); color: var(--white); box-shadow: var(--shadow);
+  opacity: 0; visibility: hidden; transition: opacity .3s ease; z-index: 999;
+}
+#toTop.show { opacity: 1; visibility: visible; }
+
+/* ---------- 10. Responsive + accessibility ---------- */
+@media (max-width: 767px) {
+  .section { padding: 70px 0; }
+  .hero { text-align: left; }
+}
+@media (prefers-reduced-motion: reduce) {     /* respect users who dislike animation */
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}

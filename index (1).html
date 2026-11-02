@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shravani | MCA Student & Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Shravani, MCA student building full-stack web applications.">
+
+  <!-- Libraries (all via CDN so no install is needed) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <!-- Our own styles (loaded last so they can override Bootstrap) -->
+  <link href="style.css" rel="stylesheet">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90">
+
+  <!-- ============ NAVBAR (sticky) ============ -->
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Shravani<span>.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars text-white"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ 1. HOME (Hero) ============ -->
+  <header id="home" class="hero d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7" data-aos="fade-right">
+          <p class="hero-hello">Hi, I'm</p>
+          <h1 class="hero-name">Shravani <!-- TODO: add surname --></h1>
+          <h2 class="hero-role">I'm a <span id="typed-role"></span><span class="cursor">|</span></h2>
+          <p class="hero-text">MCA student who builds practical, database-driven web applications with Laravel, Django and Java. I like turning real-world problems into clean, working software.</p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#projects" class="btn btn-primary-custom">View Projects</a>
+            <a href="assets/resume/Resume.pdf" download class="btn btn-outline-custom"><i class="fa-solid fa-download me-2"></i>Download Resume</a>
+          </div>
+          <div class="social mt-4">
+            <!-- TODO: replace # with your real links -->
+            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:you@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+        <!-- Hero card: a small "code window" instead of a stock photo (keeps the page fast) -->
+        <div class="col-lg-5" data-aos="fade-left">
+          <div class="glass code-window">
+            <div class="dots"><span></span><span></span><span></span></div>
+<pre><code><span class="c-k">const</span> developer = {
+  name: <span class="c-s">"Shravani"</span>,
+  course: <span class="c-s">"MCA"</span>,
+  stack: [<span class="c-s">"Laravel"</span>, <span class="c-s">"Django"</span>,
+          <span class="c-s">"Java"</span>, <span class="c-s">"MySQL"</span>],
+  openToWork: <span class="c-k">true</span>
+};</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ 2. ABOUT ============ -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">About Me</h2>
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-7" data-aos="fade-up">
+          <p>I'm a Master of Computer Applications (MCA) student with a strong interest in full-stack web development. I enjoy designing database schemas, writing backend logic and building interfaces that are easy to use.</p>
+          <p>My projects cover three different stacks: PHP/Laravel, Python/Django and Java/JSP, so I'm comfortable picking up a new framework and understanding how the layers of an application fit together.</p>
+          <p>I'm looking for an entry-level software developer role where I can keep learning while contributing to real products.</p>
+        </div>
+        <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+          <div class="glass stat-grid">
+            <div><strong>3</strong><span>Full-stack projects</span></div>
+            <div><strong>3</strong><span>Backend stacks</span></div>
+            <div><strong>2</strong><span>Databases used</span></div>
+            <div><strong>MCA</strong><span>Currently pursuing</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. SKILLS ============ -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Skills</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+          <div class="glass skill-card">
+            <i class="fa-solid fa-code"></i><h3>Languages</h3>
+            <ul class="tags"><li>Java</li><li>PHP</li><li>Python</li><li>JavaScript</li><li>SQL</li></ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="glass skill-card">
+            <i class="fa-solid fa-layer-group"></i><h3>Frameworks</h3>
+            <ul class="tags"><li>Laravel</li><li>Django</li><li>JSP &amp; Servlets</li><li>Bootstrap</li></ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="glass skill-card">
+            <i class="fa-solid fa-database"></i><h3>Databases</h3>
+            <ul class="tags"><li>MySQL</li><li>MongoDB</li><li>JDBC</li></ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="glass skill-card">
+            <i class="fa-solid fa-screwdriver-wrench"></i><h3>Tools</h3>
+            <ul class="tags"><li>Git &amp; GitHub</li><li>VS Code</li><li>Postman</li><li>XAMPP</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. PROJECTS ============ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Projects</h2>
+      <div class="row g-4">
+
+        <!-- Project 1 -->
+        <div class="col-lg-4" data-aos="fade-up">
+          <article class="glass project-card">
+            <div class="project-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Energy Audit Portal</h3>
+            <p>Web portal to record, manage and review energy audits, with role-based access and report views.</p>
+            <ul class="tags"><li>Laravel</li><li>PHP</li><li>MySQL</li></ul>
+            <div class="project-links">
+              <a href="#" aria-label="Energy Audit Portal source code"><i class="fa-brands fa-github"></i> Code</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <article class="glass project-card">
+            <div class="project-icon"><i class="fa-solid fa-solar-panel"></i></div>
+            <h3>SolarCalc</h3>
+            <p>Solar calculator that estimates system size, output and savings from the user's inputs.</p>
+            <ul class="tags"><li>Python</li><li>Django</li><li>MongoDB</li></ul>
+            <div class="project-links">
+              <a href="#" aria-label="SolarCalc source code"><i class="fa-brands fa-github"></i> Code</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <article class="glass project-card">
+            <div class="project-icon"><i class="fa-solid fa-toggle-on"></i></div>
+            <h3>Feature Flag Management System</h3>
+            <p>Admin tool to create feature flags and switch them on or off without redeploying the application.</p>
+            <ul class="tags"><li>Java</li><li>JSP</li><li>Servlets</li><li>JDBC</li><li>MySQL</li></ul>
+            <div class="project-links">
+              <a href="#" aria-label="Feature Flag Management System source code"><i class="fa-brands fa-github"></i> Code</a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <!-- TODO: edit the descriptions above to match exactly what you built -->
+    </div>
+  </section>
+
+  <!-- ============ 5. EDUCATION (a real sequence, so a timeline fits) ============ -->
+  <section id="education" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-up">
+          <h3>Master of Computer Applications (MCA)</h3>
+          <p class="meta">Your University / College Name &middot; 2024 &ndash; Present</p>
+          <p>Focus on web technologies, databases, software engineering and data structures.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-up">
+          <h3>Bachelor's Degree (e.g. BCA / BSc Computer Science)</h3>
+          <p class="meta">Your University / College Name &middot; 2021 &ndash; 2024</p>
+          <p>Add your percentage / CGPA here.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-up">
+          <h3>Higher Secondary (12th)</h3>
+          <p class="meta">Your School / Junior College &middot; Year</p>
+          <p>Add your percentage here.</p>
+        </div>
+      </div>
+      <!-- TODO: replace names, years and marks with your real details -->
+    </div>
+  </section>
+
+  <!-- ============ 6. CERTIFICATIONS ============ -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Certifications</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="glass cert-card"><i class="fa-solid fa-certificate"></i>
+            <div><h3>Certification Name</h3><p>Issuer &middot; Year</p></div></div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="glass cert-card"><i class="fa-solid fa-certificate"></i>
+            <div><h3>Certification Name</h3><p>Issuer &middot; Year</p></div></div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="glass cert-card"><i class="fa-solid fa-certificate"></i>
+            <div><h3>Certification Name</h3><p>Issuer &middot; Year</p></div></div>
+        </div>
+      </div>
+      <!-- TODO: replace with your real certificates -->
+    </div>
+  </section>
+
+  <!-- ============ 7. RESUME DOWNLOAD ============ -->
+  <section id="resume" class="section section-alt">
+    <div class="container">
+      <div class="glass resume-box text-center" data-aos="zoom-in">
+        <h2>Want the full picture?</h2>
+        <p>Download my resume for details on projects, education and skills.</p>
+        <a href="assets/resume/Resume.pdf" download class="btn btn-primary-custom">
+          <i class="fa-solid fa-file-arrow-down me-2"></i>Download Resume (PDF)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. CONTACT ============ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Contact</h2>
+      <div class="row g-4">
+        <div class="col-lg-5" data-aos="fade-up">
+          <p>Have an opportunity or a question? Send me a message and I'll reply as soon as I can.</p>
+          <ul class="contact-list">
+            <li><i class="fa-solid fa-envelope"></i> you@example.com</li>
+            <li><i class="fa-solid fa-phone"></i> +91 00000 00000</li>
+            <li><i class="fa-solid fa-location-dot"></i> Maharashtra, India</li>
+          </ul>
+        </div>
+        <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+          <form id="contactForm" class="glass contact-form" novalidate>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" required>
+              <div class="invalid-feedback">Enter your name.</div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+              <div class="invalid-feedback">Enter a valid email address.</div>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" required></textarea>
+              <div class="invalid-feedback">Write a short message.</div>
+            </div>
+            <button type="submit" class="btn btn-primary-custom">Send Message</button>
+            <p id="formStatus" class="mt-3 mb-0" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9. FOOTER ============ -->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="social mb-2">
+        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:you@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <p class="mb-0">&copy; <span id="year"></span> Shravani. Built with HTML, CSS, JavaScript and Bootstrap.</p>
+    </div>
+  </footer>
+
+  <!-- Back-to-top button -->
+  <button id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Scripts: Bootstrap bundle (includes Popper), AOS, then our own script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
